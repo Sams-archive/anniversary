@@ -66,78 +66,100 @@ const AnniversaryJar = () => {
       </section>
 
       {/* Romantic Message Modal */}
-      <AnimatePresence>
-        {showMessage && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
-              onClick={() => setShowMessage(false)}
-            />
+     {/* Romantic Message Modal */}
+<AnimatePresence>
+  {showMessage && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-3"
+      onClick={() => setShowMessage(false)}
+    >
+      <motion.div
+        initial={{ y: 60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 60, opacity: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        onClick={(e) => e.stopPropagation()}
+        className="
+          relative
+          w-full
+          max-w-md sm:max-w-2xl
+          bg-white/10 backdrop-blur-xl border border-white/20
+          rounded-2xl sm:rounded-3xl
+          p-4 sm:p-10
+          text-white
+          shadow-2xl
+        "
+      >
+        {/* Close Button */}
+        <button
+          onClick={() => setShowMessage(false)}
+          className="
+            absolute top-3 right-3
+            w-8 h-8
+            flex items-center justify-center
+            rounded-full
+            bg-white/25
+            text-white
+            text-sm
+            font-bold
+          "
+        >
+          ✕
+        </button>
 
-            {/* Glass Card */}
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 100, opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="fixed inset-0 flex items-center justify-center z-50 px-6"
-            >
-              <div className="max-w-2xl w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 text-white shadow-2xl relative">
-                
-                <button
-                  onClick={() => setShowMessage(false)}
-                  className="absolute top-4 right-6 text-white/60 hover:text-white text-xl"
-                >
-                  ✕
-                </button>
+        <div
+          className="
+            space-y-3 sm:space-y-6
+            leading-snug sm:leading-relaxed
+            text-[13px] sm:text-lg
+            font-light
+            mt-4
+          "
+        >
+          <p className="text-[14px] sm:text-xl">Hey Anita 🤍</p>
 
-                <div className="space-y-6 leading-relaxed text-lg font-light">
-                  <p>Hey Anita 🤍</p>
+          <p>
+            Exactly this time last year, a conversation started.
+            Nothing dramatic. Nothing loud.
+            Just two people talking.
+          </p>
 
-                  <p>
-                    Exactly this time last year, a conversation started.
-                    Nothing dramatic. Nothing loud.
-                    Just two people talking.
-                  </p>
+          <p>
+            But somehow, that simple moment became something I’m genuinely grateful for.
+          </p>
 
-                  <p>
-                    But somehow, that simple moment became something I’m genuinely grateful for.
-                  </p>
+          <p>
+            Over time, you stopped being “just someone I talk to” and became someone I look forward to.
+            Someone whose growth I admire. Someone whose presence feels different.
+          </p>
 
-                  <p>
-                    Over time, you stopped being “just someone I talk to” and became someone I look forward to.
-                    Someone whose growth I admire. Someone whose presence feels different.
-                  </p>
+          <p>
+            Somewhere between the random chats, the serious talks, and the quiet moments,
+            you became special to me.
+          </p>
 
-                  <p>
-                    Somewhere between the random chats, the serious talks, and the quiet moments,
-                    you became special to me.
-                  </p>
+          <p>
+            I don’t know if you realize it, but you’ve added something beautiful to my 2025.
+          </p>
 
-                  <p>
-                    I don’t know if you realize it, but you’ve added something beautiful to my 2025.
-                  </p>
+          <p>
+            And today just feels like the right moment to say…
+            I’m really glad it started.
+          </p>
 
-                  <p>
-                    And today just feels like the right moment to say…
-                    I’m really glad it started.
-                  </p>
+          <p className="italic text-neon-coral">
+            Here’s to the day we began ✨
+          </p>
 
-                  <p className="italic text-neon-coral">
-                    Here’s to the day we began ✨
-                  </p>
-
-                  <p className="pt-6 text-right">— Sampson</p>
-                </div>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+          <p className="pt-2 text-right">— Sampson</p>
+        </div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
       <footer className="py-12 text-center text-xs text-white/30 tracking-[0.2em] uppercase">
         Built with React & Tailwind 4.0 by Sampson • 2026
