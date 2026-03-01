@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors from your upload */
+  --color-neon-coral: #FF6044;
+  --color-space-black: #121313;
+  
+  /* Our 3rd complementary color */
+  --color-dusty-teal: #0d9488; 
+  
+  --font-handwritten: "Dancing Script", cursive;
+}
